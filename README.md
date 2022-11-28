@@ -23,6 +23,7 @@
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
+https://www.youtube.com/watch?v=Rea2AjMgZXA
 
 # 📖 Cruize Blog <a name="about-project"></a>
 

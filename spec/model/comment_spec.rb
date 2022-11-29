@@ -12,12 +12,12 @@ describe Comment, type: :model do
   subject { Comment.new(post: new_post.id, author: new_user, text: 'Hi Tom!') }
   before { subject.save }
 
-  describe 'Association' do
+  context 'Model Association' do
     it { should belong_to(:author) }
     it { should belong_to(:post) }
   end
 
-  describe 'Validation' do
+  context 'Model Validation' do
     it 'Text should not be empty' do
       subject.text = nil
       expect(subject).to_not be_valid

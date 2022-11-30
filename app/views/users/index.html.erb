@@ -1,1 +1,10 @@
-<h1> Here is a list of all Users <h1>
+<% @users.each do |user|%>
+    <div>
+        <img src=<%= user.photo %> />
+        <div>
+            <h1> <%= user.name %>  </h1>
+            <span> Number of Posts: <%= user.posts_count%> </span>
+            <%= link_to "User Post", user_path(user) %>
+        </div>
+    </div>
+<% end %>

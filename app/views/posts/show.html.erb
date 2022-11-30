@@ -1,1 +1,9 @@
-<h1> Here is a single Post Page of a User <h1>
+<div>
+    <p> <%= @post.text%> </p>    
+</div>
+
+<div>
+    <% @post.comments.each_with_index do |comment,index|%>
+        <span> <%= index+1 %> :  <%= comment.text%> </span>
+    <% end %>
+<div>

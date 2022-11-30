@@ -1,1 +1,23 @@
-<h1> Here is a single User Page <h1>
+<div>
+    <img src=<%= @user.photo %> />
+    <h1> <%= @user.name %>  </h1>
+<div>
+<div>
+    <h3> Bio </h3>
+    <p> <%= @user.bio %> </p>
+<div>
+<% @user.recent_post.each_with_index do |post,index|%>
+    <div>
+        <span> Post # <%= index+1 %> </span>
+        <h2> <%= post.title %></h2>
+        <p> <%= post.text %> </p>
+        <div>
+            <span>Comments: <%= post.comments_count %> </span> <span> Likes: <%= post.likes_count %> </span>
+        </div>
+        <%= link_to "Read More", user_post_path(@user, post) %>
+
+        <br />
+    </div>
+<% end %>
+
+<%= link_to "See all posts", user_posts_path(@user) %>

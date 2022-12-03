@@ -20,4 +20,23 @@
     </div>
 <% end %>
 
+<h2> Create Post </h2>
+<%= form_with model: @post, url: user_posts_path(Current.user), data: { turbo: false} do |form| %>
+    <% if @post.errors.any? %>
+        <div class="alert alert-danger">
+            <% @post.errors.full_messages do |message| %>
+                <div> <%= message %> </div>
+            <% end %>
+        </div>
+    <% end %>
+    <div class="mb-3">
+        <%= form.label :title, class: "form-label" %>
+        <%= form.text_field :title, class: "form-control", id: "exampleFormControlInput1", placeholder: "Post Title" %>
+    </div>
+    <div class="mb-3">
+        <%= form.label :text, class: "form-label" %>
+        <%= form.text_field :text, class: "form-control", id: "exampleFormControlInput2", placeholder: "Post Text" %>
+    </div>
+    <%= form.submit "Create Post", class:"btn" %>
+<% end %>
 <%= link_to "See all posts", user_posts_path(@user) %>

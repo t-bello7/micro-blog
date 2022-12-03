@@ -7,3 +7,19 @@
         <span> <%= index+1 %> :  <%= comment.text%> </span>
     <% end %>
 <div>
+
+<h2> Create Comment </h2>
+<%= form_with model: @comment, url: user_posts_path(Current.user), data: { turbo: false} do |form| %>
+    <% if @post.errors.any? %>
+        <div class="alert alert-danger">
+            <% @post.errors.full_messages do |message| %>
+                <div> <%= message %> </div>
+            <% end %>
+        </div>
+    <% end %>
+    <div class="mb-3">
+        <%= form.label :text, class: "form-label" %>
+        <%= form.text_field :text, class: "form-control", id: "exampleFormControlInput1", placeholder: "Post Title" %>
+    </div>
+    <%= form.submit "Create Post", class:"btn" %>
+<% end %>

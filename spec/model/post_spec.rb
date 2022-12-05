@@ -9,11 +9,11 @@ describe Post, type: :model do
     subject.save
   end
 
-  describe 'Association' do
+  context 'Model Association' do
     it { should belong_to(:author) }
   end
 
-  describe 'Validation' do
+  context 'Model Validation' do
     it 'Title should not be empty' do
       subject.title = nil
       expect(subject).to_not be_valid
@@ -45,7 +45,7 @@ describe Post, type: :model do
     end
   end
 
-  describe 'Model methods test' do
+  context 'Model Methods Tests' do
     it 'loads only the most recent 5 comments' do
       expect(subject.recent_comment).to eq(subject.comments.last(5))
     end

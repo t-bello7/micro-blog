@@ -12,10 +12,10 @@ describe PostsController, type: :controller do
     expect(response).to render_template('index')
   end
 
-  # it 'renders the show template of posts' do
-  #   get :show, params: { user_id: 1, id: 1 }
-  #   expect(response).to render_template('post/show')
-  # end
+  it 'renders the show template of posts' do
+    get :show, params: { user_id: 1, id: 1 }
+    expect(response).to render_template('posts/show')
+  end
 
   it 'renders the actual template of the index page' do
     get :index, params: { user_id: 1 }

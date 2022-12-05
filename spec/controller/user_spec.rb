@@ -34,14 +34,4 @@ describe UsersController, type: :controller do
     get :show, params: { id: subject.id }
     expect(response).to render_template('show')
   end
-
-  it 'renders the actual template of the index page' do
-    get :index
-    expect(response.body).to match(/<h1> Here is a list of all Users <h1>/)
-  end
-
-  it 'renders the actual template of the show page' do
-    get :show, params: { id: subject.id }
-    expect(response.body).to match(/<h1> Here is a single User Page <h1>/)
-  end
 end

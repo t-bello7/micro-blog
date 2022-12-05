@@ -6,7 +6,7 @@ describe PostsController, type: :request do
                           bio: 'Teacher from Mexico.')
     Post.create(id: '2', author: subject, title: 'Hello', text: 'This is my first post')
   end
-  
+
   it 'returns a successful response' do
     get user_posts_path(2)
     expect(response).to have_http_status(:ok)
@@ -23,7 +23,7 @@ describe PostsController, type: :request do
   end
 
   it 'renders the show template of posts' do
-    get user_post_path(2,2)
+    get user_post_path(2, 2)
     expect(response).to render_template('posts/show')
   end
 end

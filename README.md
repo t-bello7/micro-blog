@@ -89,6 +89,8 @@ To get a local copy up and running, follow these steps.
 ### Prerequisites
 
 In order to run this project you need:
+- Ruby
+- Knowledge of Gems, Rails and Ruby
 
 <!--
 Example command:
@@ -102,51 +104,36 @@ Example command:
 
 Clone this repository to your desired folder:
 
-<!--
-Example commands:
-
-```sh
-  cd my-folder
-  git clone git@github.com:myaccount/my-project.git
 ```
---->
+  git clone https://github.com/t-bello7/micro-blog.git
+```
 
 ### Install
 
 Install this project with:
 
-<!--
-Example command:
-
-```sh
-  cd my-project
+```
+  cd micro-blog
   gem install
 ```
---->
 
 ### Usage
 
 To run the project, execute the following command:
 
-<!--
-Example command:
-
-```sh
+```
   rails server
 ```
---->
 
 ### Run tests
 
 To run tests, run the following command:
 
-<!--
 Example command:
 
-```sh
-  bin/rails test test/models/article_test.rb
 ```
---->
+  bin/railsn rspec spec
+```
 
 ### Deployment
 

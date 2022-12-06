@@ -1,17 +1,17 @@
-<div class="d-flex mt-4">
+<div class="d-flex mt-4 shadow p-3 mb-5 bg-body rounded">
     <%= image_tag(@user.photo, class: "w-25 h-25 me-3") %>
     <div class="d-flex flex-column mw-100 flex-fill justify-content-center">
         <h1 class="g-start-2" style="grid-row: 2"> <%= @user.name %>  </h1>
         <span class="align-self-end"> Number of Posts: <%= @user.posts_count%> </span>
     </div>
 </div>
-<div class="mb-4">
+<div class="mb-4 shadow p-3 mb-5 bg-body rounded">
     <h3> Bio </h3>
     <p> <%= @user.bio %> </p>
 </div>
 <% @user.recent_post.each_with_index do |post,index|%>
     <%= link_to user_post_path(@user, post), class:"text-decoration-none"  do %>
-    <div class="mb-5 d-flex flex-column">
+    <div class="mb-5 d-flex flex-column shadow p-3 mb-5 bg-body rounded">
         <span> Post # <%= index+1 %> </span>
         <h2> <%= post.title %></h2>
         <p> <%= post.text %> </p>

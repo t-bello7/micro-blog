@@ -1,1 +1,33 @@
-<h1> Here is a list of posts for a given user <h1>
+<div class="d-flex mt-4 shadow p-3 mb-5 bg-body rounded">
+    <%= image_tag(@user.photo, class: "w-25 h-25 me-3") %>
+    <div class="d-flex flex-column mw-100 flex-fill justify-content-center">
+        <h1 class="g-start-2" style="grid-row: 2"> <%= @user.name %>  </h1>
+        <span class="align-self-end"> Number of Posts: <%= @user.posts_count%> </span>
+    </div>
+</div>
+<% @posts.each_with_index do |post,index|%>
+    <%= link_to user_post_path(@user, post), class:"text-decoration-none"  do %>
+        <div class="mb-5 d-flex flex-column shadow p-3 mb-5 bg-body rounded">
+            <span> Post # <%= index+1 %> </span>
+            <h2> <%= post.title %></h2>
+            <p> <%= post.text %> </p>
+            <div class="align-self-end">
+                <span>Comments: <%= post.comments_count %> </span> <span> Likes: <%= post.likes_count %> </span>
+            </div>
+        </div>
+    <% end %>
+    <div class="d-flex flex-column p-3 mb-5 bg-body rounded">
+        <% post.recent_comment.each do |comment|%>
+            <span> <%= comment.author.name %>: <%= comment.text%> </span>
+        <% end %>
+    </div>
+<% end %>
+<nav aria-label="Page navigation example" class="mx-auto" style="width: 200px;">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>
+</nav>

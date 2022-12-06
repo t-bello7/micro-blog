@@ -39,8 +39,8 @@ ActiveRecord::Schema[7.0].define(version: 20_221_123_173_137) do
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
     t.bigint 'author_id', null: false
-    t.integer 'comments_count'
-    t.integer 'likes_count'
+    t.integer 'comments_count', default: 0
+    t.integer 'likes_count', default: 0
     t.index ['author_id'], name: 'index_posts_on_author_id'
   end
 
@@ -50,7 +50,7 @@ ActiveRecord::Schema[7.0].define(version: 20_221_123_173_137) do
     t.string 'bio'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
-    t.integer 'posts_count'
+    t.integer 'posts_count', default: 0
   end
 
   add_foreign_key 'comments', 'posts'

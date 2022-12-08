@@ -9,11 +9,11 @@ class Post < ApplicationRecord
   validates :comments_count, numericality: { only_integer: true }, comparison: { greater_than_or_equal_to: 0 }
   validates :likes_count, numericality: { only_integer: true }, comparison: { greater_than_or_equal_to: 0 }
 
-  def new 
+  def new
     @post = Post.new
   end
 
-  def create 
+  def create
     @post = Post.new(params)
     if @post.save
       redirect_to root_path
@@ -22,7 +22,6 @@ class Post < ApplicationRecord
     end
   end
 
-  
   def author_posts_counter
     author.increment!(:posts_count)
   end

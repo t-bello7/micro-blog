@@ -1,25 +1,29 @@
-<div>
-    <img src=<%= @user.photo %> />
-    <h1> <%= @user.name %>  </h1>
-<div>
-<div>
+<div class="d-flex mt-4 shadow p-3 mb-5 bg-body rounded">
+    <%= image_tag(@user.photo, class: "w-25 h-25 me-3") %>
+    <div class="d-flex flex-column mw-100 flex-fill justify-content-center">
+        <h1 class="g-start-2" style="grid-row: 2"> <%= @user.name %>  </h1>
+        <span class="align-self-end"> Number of Posts: <%= @user.posts_count%> </span>
+    </div>
+</div>
+<div class="mb-4 shadow p-3 mb-5 bg-body rounded">
     <h3> Bio </h3>
     <p> <%= @user.bio %> </p>
-<div>
+</div>
+
 <% @user.recent_post.each_with_index do |post,index|%>
-    <div>
+    <%= link_to user_post_path(@user, post), class:"text-decoration-none"  do %>
+    <div class="mb-5 d-flex flex-column shadow p-3 mb-5 bg-body rounded">
         <span> Post # <%= index+1 %> </span>
         <h2> <%= post.title %></h2>
         <p> <%= post.text %> </p>
-        <div>
+        <div class="align-self-end">
             <span>Comments: <%= post.comments_count %> </span> <span> Likes: <%= post.likes_count %> </span>
         </div>
-        <%= link_to "Read More", user_post_path(@user, post) %>
-
-        <br />
     </div>
+    <% end %>
 <% end %>
 
+<div class="mt-4 shadow p-3 mb-5 bg-body rounded">
 <h2> Create Post </h2>
 <%= form_with model: @post, url: user_posts_path(Current.user), data: { turbo: false} do |form| %>
     <% if @post.errors.any? %>
@@ -37,6 +41,10 @@
         <%= form.label :text, class: "form-label" %>
         <%= form.text_field :text, class: "form-control", id: "exampleFormControlInput2", placeholder: "Post Text" %>
     </div>
-    <%= form.submit "Create Post", class:"btn" %>
+    <%= form.submit "Create Post", class:"btn btn-primary" %>
 <% end %>
-<%= link_to "See all posts", user_posts_path(@user) %>
+</div>
+
+<div class="mx-auto" style="width: 200px;">
+<%= link_to "See all posts", user_posts_path(@user), class: "btn btn-dark mb-4" %>
+</div>

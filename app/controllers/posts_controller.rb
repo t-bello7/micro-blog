@@ -6,6 +6,22 @@ class PostsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
     @post = Post.find(params[:id])
+  end
+
+  def create
+    @post = Current.user.posts.new(post_params)
+    if @post.save
+      redirect_to root_path
+    else
+      render plain: @post.errors.messages
+    end
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:text, :title)
   end
 end

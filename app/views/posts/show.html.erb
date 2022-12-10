@@ -8,7 +8,10 @@
 
     <p class="mt-3"> <%= @post.text%> </p>    
 </div>
-
+<%= form_with model: @like, url: user_post_likes_path(Current.user, @post.id), data: { turbo: false} do |form| %>
+        <%= hidden_field_tag( value: @post.id) %>  
+<%= form.submit "Like", class:"btn btn-primary"%>
+<% end %>
 <% if @post.comments %>
 <div class="shadow d-flex flex-column p-3 mb-5 bg-body rounded">
     <% @post.comments.each do |comment|%>

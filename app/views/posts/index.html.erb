@@ -12,9 +12,13 @@
             <h2> <%= post.title %></h2>
             <p> <%= post.text %> </p>
             <div class="align-self-end">
-                <span>Comments: <%= post.comments_count %> </span> <span> Likes: <%= post.likes_count %> </span>
+    <span>Comments: <%= post.comments_count %> </span> <span> Likes: <%= post.likes_count %> </span>
             </div>
         </div>
+    <% end %>
+    <%= form_with model: @like, url: user_post_likes_path(Current.user, post.id), data: { turbo: false} do |form| %>
+            <%= hidden_field_tag( value: post.id) %>  
+    <%= form.submit "Like", class:"btn btn-primary"%>
     <% end %>
     <div class="d-flex flex-column p-3 mb-5 bg-body rounded">
         <% post.recent_comment.each do |comment|%>

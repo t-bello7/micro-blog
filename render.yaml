@@ -1,7 +1,7 @@
 databases:
-  - name: cruize
-  - databaseName: cruize_databse
-  - user: tomi
+ - name: cruize
+ - databaseName: cruize_databse
+ - user: tomi
 
 services:
   - type: web

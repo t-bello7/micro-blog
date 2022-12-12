@@ -12,9 +12,9 @@
         <%= hidden_field_tag( value: @post.id) %>  
 <%= form.submit "Like", class:"btn btn-primary"%>
 <% end %>
-<% if @post.comments %>
+<% if @comments %>
 <div class="shadow d-flex flex-column p-3 mb-5 bg-body rounded">
-    <% @post.comments.each do |comment|%>
+    <% @comments.each do |comment|%>
         <span> <%= comment.author.name %>: <%= comment.text%> </span>
     <% end %>
 </div>

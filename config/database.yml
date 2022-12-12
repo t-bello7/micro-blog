@@ -76,6 +76,4 @@ test:
 #
 production:
   <<: *default
-  database: cruize_production
-  username: cruize
-  password: <%= ENV["CRUIZE_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>

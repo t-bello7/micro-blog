@@ -21,7 +21,7 @@
     <%= form.submit "Like", class:"btn btn-primary"%>
     <% end %>
     <div class="d-flex flex-column p-3 mb-5 bg-body rounded">
-        <% post.recent_comment.each do |comment|%>
+        <% post.recent_comment.includes(:author).each do |comment|%>
             <span> <%= comment.author.name %>: <%= comment.text%> </span>
         <% end %>
     </div>

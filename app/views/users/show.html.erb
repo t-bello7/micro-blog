@@ -1,5 +1,5 @@
 <div class="d-flex mt-4 shadow p-3 mb-5 bg-body rounded">
-    <%= image_tag(@user.photo, class: "w-25 h-25 me-3") %>
+    <%= image_tag(@user.photo, class: "user-photo w-25 h-25 me-3") %>
     <div class="d-flex flex-column mw-100 flex-fill justify-content-center">
         <h1 class="g-start-2" style="grid-row: 2"> <%= @user.name %>  </h1>
         <span class="align-self-end"> Number of Posts: <%= @user.posts_count%> </span>
@@ -45,6 +45,6 @@
 <% end %>
 </div>
 
-<div class="mx-auto" style="width: 200px;">
-<%= link_to "See all posts", user_posts_path(@user), class: "btn btn-dark mb-4" %>
-</div>
+<%= link_to user_posts_path(@user), class: "mx-auto", style: "width: 200px; display: block" do%>
+    <%= button_tag "See all posts", class: "btn btn-dark mb-4" %>
+<% end %>

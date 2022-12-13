@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe UsersController, type: :request do
+RSpec.describe UsersController, type: :request do
   subject { User.create(id: '2', name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.') }
   before { subject.save }
   it 'Response index route to be successful' do

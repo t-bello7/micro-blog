@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  before_action :authenticate_user!
   has_many :comments
   has_many :likes
   belongs_to :author, class_name: 'User', counter_cache: true

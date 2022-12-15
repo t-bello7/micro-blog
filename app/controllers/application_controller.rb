@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
-  before_action :set_current_user
+    before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def set_current_user
-    Current.user = User.first
-  end
+    protected
+  
+    def configure_permitted_parameters
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :bio])
+    end
 end

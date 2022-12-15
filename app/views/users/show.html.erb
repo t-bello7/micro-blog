@@ -1,5 +1,5 @@
 <div class="d-flex mt-4 shadow p-3 mb-5 bg-body rounded">
-    <%= image_tag(@user.photo, class: "user-photo w-25 h-25 me-3") %>
+    <%= image_tag(@user.photo || "https://png.pngtree.com/png-clipart/20210310/original/pngtree-boys-default-avatar-png-image_5941232.jpg", class: "user-photo w-25 h-25 me-3") %>
     <div class="d-flex flex-column mw-100 flex-fill justify-content-center">
         <h1 class="g-start-2" style="grid-row: 2"> <%= @user.name %>  </h1>
         <span class="align-self-end"> Number of Posts: <%= @user.posts_count%> </span>
@@ -21,11 +21,18 @@
         </div>
     </div>
     <% end %>
+    <% if user_signed_in? %>
+        <%= form_with model: @like, url: user_post_likes_path(current_user, post.id), data: { turbo: false} do |form| %>
+            <%= hidden_field_tag( value: @post.id) %>  
+            <%= form.submit "Like", class:"btn btn-primary"%>
+        <% end %>
+    <% end %>
 <% end %>
 
+<% if user_signed_in? %>
 <div class="mt-4 shadow p-3 mb-5 bg-body rounded">
 <h2> Create Post </h2>
-<%= form_with model: @post, url: user_posts_path(Current.user), data: { turbo: false} do |form| %>
+<%= form_with model: @post, url: user_posts_path(current_user), data: { turbo: false} do |form| %>
     <% if @post.errors.any? %>
         <div class="alert alert-danger">
             <% @post.errors.full_messages do |message| %>
@@ -44,6 +51,7 @@
     <%= form.submit "Create Post", class:"btn btn-primary" %>
 <% end %>
 </div>
+<% end %>
 
 <%= link_to user_posts_path(@user), class: "mx-auto", style: "width: 200px; display: block" do%>
     <%= button_tag "See all posts", class: "btn btn-dark mb-4" %>

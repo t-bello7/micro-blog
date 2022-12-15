@@ -3,8 +3,7 @@ class LikesController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    @author = User.find(params[:user_id])
-    @like = @post.likes.new(post: @post, author: @author)
+    @like = @post.likes.new(post: @post, author: current_user)
     if @like.save
       redirect_to request.referrer
     else

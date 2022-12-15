@@ -19,13 +19,14 @@ Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
   IgnoredMethods: ['describe']
-  Max: 45
+  Max: 58
 Metrics/CyclomaticComplexity:
   Max: 9
 Metrics/PerceivedComplexity:
   Max: 9
 
-
+Style/RedundantConstantBase:
+  Enabled: false
 Style/Documentation:
   Enabled: false
 Style/ClassAndModuleChildren:

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe PostsController, type: :request do
+RSpec.describe PostsController, type: :request do
   before(:each) do
     subject = User.create(id: '2', name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
                           bio: 'Teacher from Mexico.')

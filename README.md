@@ -62,9 +62,22 @@ https://www.youtube.com/watch?v=Rea2AjMgZXA
 
 > Describe between 1-3 key features of the application.
 
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
+- **Users can add posts**
+- **Users can comment on posts**
+- **Users can like posts**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+> Describe 1 - 3 features you will add to the project.
+
+- [ ] **[Users can register ]**
+- [ ] **[Users can Login ]**
+- [ ] **[Users can like and commnet on other users posts]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -122,7 +135,7 @@ Install this project with:
 To run the project, execute the following command:
 
 ```
-  rails server
+  bin/rails server
 ```
 
 ### Run tests
@@ -132,7 +145,7 @@ To run tests, run the following command:
 Example command:
 
 ```
-  bin/railsn rspec spec
+  bin/rails rspec spec
 ```
 
 ### Deployment
@@ -153,7 +166,6 @@ Example:
 
 ## 👥 Authors <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
 
 👤 **Author1**
 
@@ -161,17 +173,12 @@ Example:
 - Twitter: [@__tbello](https://twitter.com/__tbello)
 - LinkedIn: [Bello Oluwatomisin](https://linkedin.com/in/tbello7)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- FUTURE FEATURES -->
+👤 **Author2**
 
-## 🔭 Future Features <a name="future-features"></a>
-
-> Describe 1 - 3 features you will add to the project.
-
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- GitHub: [@GordonOtieno](https://github.com/GordonOtieno)
+- Twitter: [@GordonO34459259](https://twitter.com/GordonO34459259)
+- LinkedIn: [Gordon Otieno](https://www.linkedin.com/in/gordonotieno/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -189,9 +196,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
-If you like this project...
+If you like this project you can show support by giving a star to the project
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -199,14 +204,12 @@ If you like this project...
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank...
+I would like to thank microverse and Gorails community 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FAQ (optional) -->
-
+<!-- 
 ## ❓ FAQ <a name="faq"></a>
 
 > Add at least 2 questions new developers would ask when they decide to use your project.
@@ -219,7 +222,7 @@ I would like to thank...
 
   - [Answer_2]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 <!-- LICENSE -->
 

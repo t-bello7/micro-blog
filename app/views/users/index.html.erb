@@ -1,7 +1,7 @@
 <% @users.each do |user| %>
     <%= link_to user_path(user), class:"text-decoration-none"  do %>
     <div class="d-flex p-2 shadow p-3 mb-5 bg-body rounded ">
-        <%= image_tag(user.photo, class: "user-photo w-25 h-25 me-3") %>
+        <%= image_tag(user.photo || , class: "user-photo w-25 h-25 me-3", alt: "profile-imge") %>
         <div class="d-flex flex-column mw-100 flex-fill justify-content-center">
             <h1 class="g-start-2" style="grid-row: 2"> <%= user.name %>  </h1>
             <span class="align-self-end"> Number of Posts: <%= user.posts_count%> </span>

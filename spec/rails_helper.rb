@@ -101,6 +101,12 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
+RSpec.configure do |config|
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
+  config.include Devise::Test::IntegrationHelpers, type: :feature
+end
+
 Capybara.register_driver :selenium_edge do |app|
   Capybara::Selenium::Driver.new(app, browser: :edge)
 end
